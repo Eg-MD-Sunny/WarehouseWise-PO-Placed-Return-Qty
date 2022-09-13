@@ -1,11 +1,11 @@
 -- Summary Returned
 
-select  w.id WarehouseID,
+select  w.id [WarehouseID],
         w.name Warehouse,
-		count(distinct ro.vendorid) TotalVendorReturn,
-		count(distinct ro.id) ReturnIDCount,
-		Count(*) ReturnQuantity,
-		sum(t.ReturnPrice) ReturnPrice
+		count(distinct ro.vendorid) [TotalVendorReturn],
+		count(distinct ro.id) [ReturnIDCount],
+		Count(*) [ReturnQuantity],
+		sum(t.ReturnPrice) [ReturnPrice]
 
 from returnorder ro
 join thing t on t.ReturnOrderId=ro.id
